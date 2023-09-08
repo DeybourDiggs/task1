@@ -13,8 +13,7 @@ app.post("/api", async (req, res) => {
   try {
     await task.save();
     res.status(201).json({
-      status: true,
-      task,
+      task
     });
   } catch (error) {
     res.status(401).json({
@@ -30,8 +29,7 @@ app.get("/api" , async(req, res) => {
         const allTasks = await Task.find()
 
         res.status(201).json({
-            success: "true",
-            data: allTasks
+            allTasks
         })
     } catch (error) {
         res.status(401).send(error);
@@ -45,8 +43,7 @@ app.get("/api", async (req, res) => {
     const tasks = await Task.find(req.query)
       
     res.status(200).json({
-      success: true,
-      data: tasks,
+      data: tasks
     });
   } catch (error) {
     res.status(401).send(error);
