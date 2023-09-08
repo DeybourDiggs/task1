@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3030;
 db();
 app.use(express.json());
 
-app.post("/task", async (req, res) => {
+app.post("/api", async (req, res) => {
   const task = new Task(req.body);
   try {
     await task.save();
@@ -25,7 +25,7 @@ app.post("/task", async (req, res) => {
 });
 
 
-app.get("/task" , async(req, res) => {
+app.get("/api" , async(req, res) => {
     try {
         const allTasks = await Task.find()
 
@@ -38,7 +38,7 @@ app.get("/task" , async(req, res) => {
     }
 })
 
-app.get("/task", async (req, res) => {
+app.get("/api", async (req, res) => {
     
   try {
    
