@@ -23,6 +23,9 @@ const TaskSchema = new mongoose.Schema({
     },
     github_source_url:{
         type: String,
+    },
+    status_code : {
+        type: Number
     }
 })
 
