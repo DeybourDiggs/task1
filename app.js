@@ -39,7 +39,10 @@ app.get("/api", async (req, res) => {
     
   try {
    
-    const tasks = await Task.find(req.query)
+    const tasks = await Task.find({
+        slack_name: "adeola",
+        track: "backend"
+    })
       
     res.status(200).json(tasks);
   } catch (error) {
